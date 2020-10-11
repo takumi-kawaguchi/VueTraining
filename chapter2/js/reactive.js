@@ -8,5 +8,8 @@ let app = new Vue({
         this.timer = setInterval(function() {
             that.current = new Date();
         }, 1000);
+    },
+    beforeDestroy: function() {
+        clearInterval(this.timer);
     }
 });

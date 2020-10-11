@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="js">
+<head>
+    <meta charset="UTF-8">
+    <title>イベント</title>
+</head>
+<body>
+    <div id="event">
+        <button v-on:click="onclick">クリック</button>
+        <p>{{ message }}</p>
+        <img v-bind:src="path" alt="ロゴ画像" v-on:mouseenter="onmouseenter" v-on:mouseleave="onmouseleave" />
+        <img v-bind:src="image" v-on:error="onerror" />
+    </div>
+    <script src="lib/vue.js"></script>
+    <script src="js/event.js"></script>
+</body>
+</html>
