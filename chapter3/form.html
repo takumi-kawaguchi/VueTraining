@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>双方向バインディング</title>
+</head>
+<body>
+    <div id="app">
+        <form>
+            <!-- text -->
+            <label for="name">氏名：</label>
+            <input type="text" id="name" v-model="myName" />
+            <div>hello, {{ myName }}</div>
+
+            <!-- radio -->
+            <label for="dog">dog</label>    
+            <input type="radio" value="dog" id="dog" v-model="pet" />
+            <label for="cat">cat</label>    
+            <input type="radio" value="cat" id="cat" v-model="pet" />
+            <label for="other">other</label>    
+            <input type="radio" value="other" id="other" v-model="pet" />
+            <p>{{ pet }}</p>
+
+            <!-- checkbox single -->
+            <label for="agree">同意する：</label>
+            <input type="checkbox" id="agree" v-model="agree" />
+            <p>回答：{{ agree }}</p>
+
+            <!-- checkbox multiple -->
+            <label for:="windows">Windows</label>
+            <input type="checkbox" value="Windows" v-model="os" id="windows" />
+            <label for:="linux">Linux</label>
+            <input type="checkbox" value="Linux" v-model="os" id="linux" />
+            <label for:="mac">MacOS</label>
+            <input type="checkbox" value="MacOS" v-model="os" id="mac" />
+            <p>{{ os }}</p>
+
+            <!-- optionbox -->
+            <select id="fav" v-model="fav">
+                <option value="">Choose your favorite character.</option>
+                <option>crown</option>
+                <option>bear</option>
+                <option>baseball</option>
+                <option>blossom</option>
+                <option>bike</option>
+                <option>zero</option>
+                <option>french</option>
+                <option>star</option>
+                <option>banana</option>
+            </select>
+            <p>{{ fav }}</p>
+
+            <!-- bind object -->
+            <label for="million">百万：</label>
+            <input type="radio" id="million" v-model="unit" v-on:change="onchange" v-bind:value="{ name: '百万', size: 1000000 }" /><br />
+            <label for="billion">十億：</label>
+            <input type="radio" id="billion" v-model="unit" v-on:change="onchange" v-bind:value="{ name: '十億', size: 1000000000 }" /><br />
+            <label for="trillion">一兆</label>
+            <input type="radio" id="trillion" v-model="unit" v-on:change="onchange" v-bind:value="{ name: '一兆', size: 1000000000000 }" /><br />
+        </form>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>
