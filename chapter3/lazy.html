@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="js">
+<head>
+    <meta charset="UTF-8">
+    <title>Lazy</title>
+</head>
+<body>
+    <div id="app">
+        <form>
+            <label for="name">氏名：</label>
+            <input type="text" id="name" v-model.lazy="myName">
+        </form>
+        <div>hello, {{ myName }}</div>
+    </div>
+
+    <script src="lib/vue.js"></script>
+    <script src="js/lazy.js"></script>
+</body>
+</html>
