@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>制御</title>
+</head>
+<body>
+    <div id="app">
+        <form>
+            <label for="show">表示/非表示</label>
+            <input type="checkbox" id="show" v-model="show" />
+        </form>
+        <div id="panel" v-if="show">
+            <h3>RSSフィードについて</h3>
+            <div>RSSフィードの登録はこちらから</div>
+        </div>
+        <div v-else>
+            現在非表示です
+        </div>
+
+        <label for="holiday">祝日：</label><br />
+        <select id="holiday" v-model="holiday">
+            <option value="">祝日を選択してください。</option>
+            <option value="new">元旦</option>
+            <option value="child">こどもの日</option>
+            <option value="culture">文化の日</option>
+            <option value="labor">勤労感謝の日</option>
+        </select>
+        <div v-if="holiday==='new'">1/1</div>
+        <div v-else-if="holiday==='child'">5/5</div>
+        <div v-else-if="holiday==='culture'">11/3</div>
+        <div v-else-if="holiday==='labor'">11/23</div>
+        <div v-else>何も指定されていません。</div>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script src="js/controll.js"></script>
+</body>
+</html>
