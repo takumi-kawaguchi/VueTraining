@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>if挙動</title>
+</head>
+<body>
+    <div id="app">
+        <fieldset>
+            <legend>支払い方法</legend>
+            クレジットカード：
+            <input type="radio" name="pay" value="credit" v-model="pay" />
+            銀行：
+            <input type="radio" name="pay" value="bank" v-model="pay" />
+            <hr />
+
+            <div v-if="pay==='credit'">
+                カード番号：
+                <input type="text" />
+            </div>
+            <div v-else-if="pay==='bank'">
+                口座番号：
+                <input type="text" />
+            </div>
+        </fieldset>
+        <!-- <p v-text="pay"></p> -->
+    </div>
+    <script src="lib/vue.js"></script>
+    <script src="js/if_key.js"></script>
+</body>
+</html>
