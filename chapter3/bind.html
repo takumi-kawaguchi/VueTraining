@@ -5,6 +5,24 @@
     <title>bind</title>
 </head>
 <body>
+    <div id="app">
+        <!-- attrs object -->
+        <form>
+            <label for="memo">メモ：</label>
+            <input type="text" id="memo" v-bind="attrs" />
+        </form>
+
+        <!-- prop  -->
+        <div v-bind:text-content.prop="text"></div>
+
+        <!-- dynamic -->
+        <select v-model="attr">
+            <option value="height">height</option>
+            <option value="width">width</option>
+        </select>：
+        <input type="text" size="5" v-model="size" /><br />
+        <img src="https://wings.msn.to/image/wings.jpg" v-bind:[attr]="size">
+    </div>
     <script src="lib/vue.js"></script>
     <script src="js/bind.js"></script>
 </body>
