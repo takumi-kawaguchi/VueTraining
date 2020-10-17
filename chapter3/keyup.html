@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>keyup</title>
+</head>
+<body>
+    <div id="app">
+        <form>
+            <label for="name">氏名：</label>
+            <input type="text" id="name" v-on:keyup.esc="clear" v-on:keyup.alt.81="help" v-model="name" />
+        </form>
+
+        <div id="main" v-on:click.left="onleftclick" v-on:click.right.prevent="onrightclick">
+            ボタンの右クリックでコンテキストメニューを表示します。
+        </div>
+        <ul class="txt" v-bind:style="pos" v-show="show">
+            <li><a href="#">テスト1</a></li>
+            <li><a href="#">テスト2</a></li>
+            <li><a href="#">テスト3</a></li>
+        </ul>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script src="js/keyup.js"></script>
+</body>
+</html>

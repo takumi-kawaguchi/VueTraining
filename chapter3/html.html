@@ -25,6 +25,9 @@
             <input type="email" id="email" name="email" />
             <input type="submit" value="送信" />
         </form>
+
+        <input type="button" value="結果表示" v-on:click.once="onclick" />
+        <p>{{ result }}点</p>
     </div>
     <script src="lib/vue.js"></script>
     <script src="js/html.js"></script>

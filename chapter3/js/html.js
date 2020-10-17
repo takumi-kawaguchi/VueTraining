@@ -2,7 +2,8 @@ new Vue({
     el: '#app',
     data: {
         message: '<img src="https://wings.msn.to/image/wings.jpg">',
-        name: 'Alice'
+        name: 'Alice',
+        result: '-'
     },
     methods: {
         onsubmit: function(e) {
@@ -10,6 +11,9 @@ new Vue({
                 e.preventDefault();
                 return;
             }
+        },
+        onclick: function(e) {
+            this.result = Math.floor(Math.random() * 100) + 1;
         }
     }
 });
