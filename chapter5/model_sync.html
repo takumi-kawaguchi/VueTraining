@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <div id="app">
-        <my-input v-model="message"></my-input>
+        <my-input v-bind:value.sync="message"></my-input>
         <p>入力値：{{ message }}</p>
     </div>
     <script src="lib/vue.js"></script>
-    <script src="js/component_model.js"></script>
+    <script src="js/model_sync.js"></script>
 </body>
 </html>

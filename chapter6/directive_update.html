@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <select v-model="color">
+            <option value="yellow">黄色</option>
+            <option value="red">赤色</option>
+            <option value="blue">青色</option>
+        </select>
+        <p>Hello, world. <span v-highlight="color">This is test.</span></p>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script src="js/directive_update.js"></script>
+</body>
+</html>
